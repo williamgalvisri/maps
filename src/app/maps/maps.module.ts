@@ -9,6 +9,12 @@ import { PropertiesPageComponent } from './pages/properties-page/properties-page
 import { ZoomRangePageComponent } from './pages/zoom-range-page/zoom-range-page.component';
 import { CommonModule } from '@angular/common';
 
+// Set config mapbox
+import mapboxgl from 'mapbox-gl';
+import { enviroment } from '../enviroments/enviroments';
+
+mapboxgl.accessToken = enviroment.mapbox_key;
+
 @NgModule({
   imports: [
     CommonModule,
