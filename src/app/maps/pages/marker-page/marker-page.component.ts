@@ -90,6 +90,8 @@ export class MarkerPageComponent {
 
     this.colorMarkers.push({color, marker});
     this.saveMarkerToLocalstorage();
+
+    marker.on('dragend', () => this.saveMarkerToLocalstorage())
   }
 
   removeMarker(index: number) {
