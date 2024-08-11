@@ -1,10 +1,7 @@
 import { AfterViewInit, Component, ElementRef, OnDestroy, ViewChild } from '@angular/core';
 import { LngLat, Map } from 'mapbox-gl'
+import { SOLEDAD_LNGLAT } from '../../../utils/map.util';
 
-const SOLEDAD_LNGLAT = {
-  lng: -74.80122252211117,
-  lat: 10.908666052726971
-}
 @Component({
   templateUrl: './zoom-range-page.component.html',
   styleUrl: './zoom-range-page.component.css'

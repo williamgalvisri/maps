@@ -1,1 +1,25 @@
-<p>marker-page works!</p>
+<div id="map" #map></div>
+
+
+<div class="floating-range p-2">
+  <div class="floating-content">
+    <div class="btn btn-primary" (click)="zoomOut()">-</div>
+    <input #zoomInput class="form-range px-2" type="range" min="-2" max="18" [value]="zoom" (input)="zoomChanged(zoomInput.value)">
+    <div class="btn btn-primary" (click)="zoomIn()">+</div>
+  </div>
+  <span class="form-label">
+    Zoom {{ zoom | number:'2.2-2' }}
+    <br>
+    Lng, Lat {{lngLat.lng | number:'2.2-2'}}, {{lngLat.lat | number:'2.2-2'}}
+  </span>
+</div>
+
+<ul class="list-group">
+  <li class="list-group-item"
+    (dblClick)="removeMarker(i)"
+    (click)="flyTo(colorMarker.marker)"
+    [ngStyle]="{backgroundColor: colorMarker.color }"
+    *ngFor="let colorMarker of colorMarkers; let i = index">Marker {{i + 1}}</li>
+</ul>
+
+<button (click)="createMarker()" class="btn btn-primary"> Agregar Marcador</button>
